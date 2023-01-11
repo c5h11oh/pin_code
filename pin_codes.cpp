@@ -120,12 +120,14 @@ int main() {
 
     // randomly select an unused pin code and emit it
     pin_code_t picked_pin_code = pick_pin_code_lottery(data);
-    cout << setfill('0') << setw(4) << picked_pin_code << endl;
-
+    
     // persist the modified data, so users does not get the same pin code again before exhausting other pin codes.
     file.seekp(0);
     file.write(reinterpret_cast<char *>(&data), sizeof(persistence_t));
     file.close();
+    
+    // outputs the picked pin code
+    cout << setfill('0') << setw(4) << picked_pin_code << endl;
 
     return 0;
 }
