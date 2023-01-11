@@ -1,5 +1,9 @@
 # PIN Code generator
 
+## Current PIN Codes that are avoided
+- PIN codes with differences between adjacent digits are identical (e.g. 0000, 1234, 9753)
+- PIN codes with 3 or more identical digits 
+
 ## Prerequisites
 - g++ that supports C++17 standards
 - Make
