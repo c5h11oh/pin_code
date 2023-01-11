@@ -1,5 +1,8 @@
 all: 
-	g++ --std=c++11 -o pin_codes pin_codes.cpp 
+	g++ --std=c++17 -o pin_codes pin_codes.cpp 
 
-clean:
-	rm ./pin_codes
+clean_persistent_data:
+	rm data.db
+
+clean: clean_persistent_data
+	rm pin_codes
