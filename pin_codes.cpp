@@ -58,7 +58,7 @@ void initialize_data(persistence_t &data, const vector<good_pin_code_func_t> &fu
     data.good_pin_codes_count = 0;
 
     // evaluate and save all valid pin codes to "data"
-    for (pin_code_t i = 0; i < 10000; ++i) {
+    for (pin_code_t i = 0; i < PIN_CODE_RANGE; ++i) {
         bool valid_pin_code = true;
         for (const auto &func : functions) {
             valid_pin_code &= func(i);
